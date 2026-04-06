@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
@@ -18,8 +19,15 @@ SERVICE_CONTENT_MAP = {
 
 ALLOWED_SERVICE_SECTIONS = frozenset(SERVICE_CONTENT_MAP.keys())
 EXPERTISE_DIR = Path(__file__).resolve().parent / "Expertise"
-CV_VIDEOS_DIR = Path(__file__).resolve().parent / "static" / "videos"
-WEB_DESIGN_VIDEOS_DIR = Path(__file__).resolve().parent / "static" / "web_design"
+
+# In production (DEBUG=False), videos live in STATIC_ROOT after collectstatic.
+# In development, they live in core/static/.
+_STATIC_ROOT = getattr(settings, "STATIC_ROOT", None)
+_APP_STATIC = Path(__file__).resolve().parent / "static"
+_VIDEOS_BASE = Path(_STATIC_ROOT) if _STATIC_ROOT and not settings.DEBUG else _APP_STATIC
+
+CV_VIDEOS_DIR = _VIDEOS_BASE / "videos"
+WEB_DESIGN_VIDEOS_DIR = _VIDEOS_BASE / "web_design"
 _CV_VIDEO_EXT = frozenset({".mp4", ".webm", ".ogg", ".mov", ".m4v"})
 
 
