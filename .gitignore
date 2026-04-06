@@ -18,6 +18,7 @@ build/
 CraftedBySharath/db.sqlite3
 CraftedBySharath/staticfiles/
 CraftedBySharath/media/
+CraftedBySharath/calling_cards/
 
 # Large video files — upload directly to server via scp
 *.mp4

@@ -1,9 +1,11 @@
 import json
 from pathlib import Path
+from uuid import uuid4
 
 from django.conf import settings
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 
@@ -206,8 +208,41 @@ def home(request):
         "languages": languages,
         "cv_videos": _list_demo_videos_in_dir(CV_VIDEOS_DIR),
         "web_design_videos": _list_demo_videos_in_dir(WEB_DESIGN_VIDEOS_DIR),
+        "contact_status": request.GET.get("contact"),
     }
     return render(request, "core/home.html", data)
+
+
+@require_POST
+def contact_submit(request):
+    name = (request.POST.get("name") or "").strip()
+    email = (request.POST.get("email") or "").strip()
+    message = (request.POST.get("message") or "").strip()
+
+    if not name or not email or not message:
+        return redirect("/?contact=error#contact")
+
+    try:
+        cards_dir = Path(settings.BASE_DIR) / "calling_cards"
+        cards_dir.mkdir(parents=True, exist_ok=True)
+        created_at = timezone.now().isoformat()
+        card_payload = {
+            "id": str(uuid4()),
+            "created_at": created_at,
+            "name": name,
+            "email": email,
+            "message": message,
+        }
+        card_filename = f"calling_card_{timezone.now().strftime('%Y%m%d_%H%M%S_%f')}.json"
+        card_path = cards_dir / card_filename
+        card_path.write_text(
+            json.dumps(card_payload, ensure_ascii=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    except Exception:
+        return redirect("/?contact=error#contact")
+
+    return redirect("/?contact=success#contact")
 
 
 @require_POST
