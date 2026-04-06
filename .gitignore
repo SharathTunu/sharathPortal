@@ -1,6 +1,38 @@
 # Virtual environment
 sharathPortal/
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+CraftedBySharath/db.sqlite3
+CraftedBySharath/staticfiles/
+CraftedBySharath/media/
+
+# Large video files — upload directly to server via scp
+*.mp4
+
+# FAISS index — rebuilt on server via `python manage.py ingest_rag`
+CraftedBySharath/RAG/faiss_index/
+
+# Environment / secrets — NEVER commit these
+.env
+*.env
 
 # OS
 .DS_Store
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
