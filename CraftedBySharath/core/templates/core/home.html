@@ -1,0 +1,682 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CraftedBySharath</title>
+    <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
+    <link href="{% static 'css/font-awesome/css/all.min.css' %}?ver=1.2.0" rel="stylesheet"> 
+    <link href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}?ver=1.2.0" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}?ver=1.2.0" rel="stylesheet">
+    <link href="{% static 'css/aos.css' %}?ver=1.2.0" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}?ver=1.2.1" rel="stylesheet">
+    <link href="{% static 'css/service_icon_pulse.css' %}?ver=1.0.0" rel="stylesheet">
+    <link href="{% static 'css/copy_email.css' %}" rel="stylesheet">
+    <link href="{% static 'css/leetcodelogo.css' %}" rel="stylesheet">
+</head>
+<body id="top">
+    {% csrf_token %}
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
+            <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#">ST//</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-2">
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="page-content">
+      <div id="content">
+<header>
+  <div class="cover bg-light">
+    <div class="container px-3">
+      <div class="row">
+        <div class="col-lg-6 p-2"><img class="img-fluid" src="{% static 'images/illustrations/hello3.svg' %}" alt="hello"/></div>
+        <div class="col-lg-6">
+          <div class="mt-5">
+            <p class="lead text-uppercase mb-1">Hello!</p>
+            <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">I'm Sharath Tunuguntla</h1>
+            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Principal Software Engineer & Machine Learning Developer</p>
+            <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
+              <nav role="navigation">
+                <ul class="nav justify-content-left">
+                  <li class="nav-item"><div class="copy-wrapper"><a class="nav-link" onclick="copyEmail('sharath22128392@gmail.com', 'tooltip-header')" title="Email"><i class="fas fa-envelope"></i><span class="menu-title sr-only">Email</span></a><div id="tooltip-header" class="tooltip-copy">Email copied!</div></div></li>
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/SharathTunu" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span class="menu-title sr-only">GitHub</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/sharath-tunuguntla/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.kaggle.com/sharathtunuguntla" title="Kaggle" target="_blank" rel="noopener noreferrer"><i class="fab fa-kaggle"></i><span class="menu-title sr-only">Kaggle</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://leetcode.com/u/sharath33/" title="LeetCode" target="_blank" rel="noopener noreferrer"><img src="{% static 'images/leetcode.svg' %}" alt="LeetCode" class="leetcode-icon"></a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-primary shadow-sm mt-1 hover-effect" href="#contact">Get In Touch <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-bg"></div>
+</header>
+<div class="section pt-4 px-3 px-lg-4" id="about">
+  <div class="container-narrow">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="h4 my-2">Hello! I'm Sharath Tunuguntla.</h2>
+        <p>Applied ML Engineer with 6+ years of end-to-end experience building, training, and deploying computer vision and AI systems in real-world production environments. 
+          Specialises in object detection, Re-Identification (ReID), tracking, and GPU-accelerated inference pipelines — 
+          with equal depth in the MLOps infrastructure required to run them reliably at scale across hundreds of remote sites. 
+          Comfortable from model training through to Docker-based deployment, automated rollback, and live GPU resource management.
+        </p>
+        <div class="row mt-3">
+          <div class="col-sm-2">
+            <div class="pb-1">Email:</div>
+          </div>
+          <div class="col-sm-10">
+            <div class="pb-1 fw-bolder">sharath22128392@gmail.com</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="pb-1">Phone:</div>
+          </div>
+          <div class="col-sm-10">
+            <div class="pb-1 fw-bolder">+916301931541</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="pb-1">Address:</div>
+          </div>
+          <div class="col-sm-10">
+            <div class="pb-1 fw-bolder">Hyderabad, Telangana, India</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="pb-1">Staus:</div>
+          </div>
+          <div class="col-sm-10">
+            <div class="pb-1 fw-bolder">Available</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 offset-md-1" data-aos="fade-left" data-aos-delay="100"><img class="avatar img-fluid mt-2" src="{% static 'images/1598393827048.jpeg' %}" width="400" height="400" alt="Sharath Tunuguntla"/></div>
+    </div>
+  </div>
+</div>
+<div class="section px-3 px-lg-4 pt-5" id="services">
+  <div class="container-narrow">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">My Expertise</h2>
+    </div>
+    <div class="text-center">
+      <p class="mx-auto mb-3" style="max-width:600px"> I can provide real-time data analytic solutions for many vision based AI usecases. And I am pretty skilled at web-design as well.</p>
+      <p class="mx-auto mb-3" style="max-width:600px"> Click on the following icons to know more about my expertise:</p>
+    </div>
+    <div class="row py-3">
+      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="300">
+        <button type="button" class="btn btn-link p-0 border-0 shadow-none service-icon-btn" data-service="ai_ml" aria-label="AI/ML — details">
+          <img class="mb-2" src="{% static 'images/services/abcd.svg' %}" width="96" height="96" alt="ai-ml"/>
+        </button>
+        <div class="h5">AI/ML</div>
+      </div>
+      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="200">
+        <button type="button" class="btn btn-link p-0 border-0 shadow-none service-icon-btn" data-service="visual_intelligence" aria-label="Visual Intelligence — details">
+          <img class="mb-2" src="{% static 'images/services/visionpulse.svg' %}" width="96" height="96" alt="vision pulse"/>
+        </button>
+        <div class="h5">Visual Intelligence</div>
+      </div>
+      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="400">
+        <button type="button" class="btn btn-link p-0 border-0 shadow-none service-icon-btn" data-service="ml_ops" aria-label="ML OPS — details">
+          <img class="mb-2" src="{% static 'images/services/mlops.svg' %}" width="96" height="96" alt="ml ops"/>
+        </button>
+        <div class="h5">ML OPS</div>
+      </div>
+      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
+        <button type="button" class="btn btn-link p-0 border-0 shadow-none service-icon-btn" data-service="web_design" aria-label="Web Design — details">
+          <img class="mb-2" src="{% static 'images/services/web-design.svg' %}" width="96" height="96" alt="web design"/>
+        </button>
+        <div class="h5">Web Design</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section px-3 px-lg-4 pt-5" id="skills">
+  <div class="container-narrow">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">My Skills</h2>
+    </div>
+    <div class="text-center">
+      <p class="mx-auto mb-3" style="max-width:600px">I am a quick learner and specialize in multitude of skills required for Model Training, Pipeline Building, Web App Development and Product Design</p>
+    </div>
+    <div class="bg-light p-3">
+      <div class="row">
+        <div class="col-md-5">
+          {% for skill_set in skill_groups %}
+            {% for skill_name, prof in skill_set.items %}
+              <div class="py-1">
+                <div class="d-flex text-small fw-bolder"><span class="me-auto">{{ skill_name  }}</span><span>{{ prof }}%</span></div>
+                <div class="progress my-1">
+                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 0%;" data-width="{{ prof }}" aria-valuenow="{{ prof }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div> 
+        
+        <div class="col-md-5 offset-md-2">
+          {% for skill_name, prof in languages.items %}
+              <div class="py-1">
+                <div class="d-flex text-small fw-bolder"><span class="me-auto">{{ skill_name  }}</span><span>{{ prof }}%</span></div>
+                <div class="progress my-1">
+                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 0%;" data-width="{{ prof }}" aria-valuenow="{{ prof }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section px-2 px-lg-4 pt-5" id="portfolio">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">Portfolio </h2>
+    </div>
+    <div class="grid pb-3" data-aos="zoom-in-up" data-aos-delay="100">
+      <div class="grid-sizer"></div>
+      <div class="grid-item">
+          <a href="#" class="rag-chat-trigger" role="button" aria-label="Open portfolio RAG chat">
+          <figure class="portfolio-item"><img src="{% static 'images/portfolio/1-small.png' %}" alt="RAG portfolio item"/>
+            <figcaption>
+              <h4 class="h5 mb-0">RAG</h4>
+              <div>Ask about me..</div>
+            </figcaption>
+          </figure></a></div>
+      <div class="grid-item">
+          <a href="#" class="cv-video-trigger{% if not cv_videos %} disabled text-muted{% endif %}" role="button"{% if not cv_videos %} aria-disabled="true" title="No demo videos in static/videos"{% else %} aria-label="Open computer vision demo videos"{% endif %}>
+          <figure class="portfolio-item"><img src="{% static 'images/portfolio/4-small.png' %}" alt="Computer Vision portfolio item"/>
+            <figcaption>
+              <h4 class="h5 mb-0">Computer Vision</h4>
+              <div>Checkout demos of some CV pipelines..</div>
+            </figcaption>
+          </figure></a></div>
+      <div class="grid-item">
+          <a
+            href="https://hf.co/collections/Sharath33/sharaths-model-zoo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Sharath's Model Zoo on Hugging Face (opens in new tab)"
+          >
+          <figure class="portfolio-item"><img src="{% static 'images/portfolio/3-small.png' %}" alt="Model Zoo portfolio item"/>
+            <figcaption>
+              <h4 class="h5 mb-0">Model Zoo</h4>
+              <div>My CV/LLM model zoo..</div>
+            </figcaption>
+          </figure></a></div>
+      <div class="grid-item">
+          <a href="#" class="web-design-video-trigger{% if not web_design_videos %} disabled text-muted{% endif %}" role="button"{% if not web_design_videos %} aria-disabled="true" title="No walkthrough videos in static/web_design"{% else %} aria-label="Open web design walkthrough videos"{% endif %}>
+          <figure class="portfolio-item"><img src="{% static 'images/portfolio/2-small.png' %}" alt="Web Design portfolio item"/>
+            <figcaption>
+              <h4 class="h5 mb-0">Web Design</h4>
+              <div>Walk thru guides for websites I have designed so far..</div>
+            </figcaption>
+          </figure></a></div>
+    </div>
+  </div>
+</div>
+<div class="section px-3 px-lg-4 pt-5" id="experience">
+  <div class="container-narrow">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">Experience</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-3" data-aos="fade-right" data-aos-delay="100">
+          <div class="card-header px-3 py-2">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h3 class="h5 mb-1">Principal Software Engineer</h3>
+                <div class="text-muted text-small">We Agile, Pune<small> (Aug 2025 - Present)</small></div>
+              </div><img src="{% static 'images/services/ui-ux.svg' %}" width="48" height="48" alt="ui-ux"/>
+            </div>
+          </div>
+          <div class="card-body px-3 py-2">
+            <p>Built real-time computer vision analytics across 80 camera streams. Developed ReID with SigLIP, integrated vLLM to cut QA effort from 50 to 15 hrs, and built an automated deployment service managing 400+ remote servers.</p>
+            <p>Created a QA tool for the ReID process that allows QA team to browse through the images and check reID results.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" data-aos="fade-left" data-aos-delay="300">
+          <div class="card-header px-3 py-2">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h3 class="h5 mb-1">Machine Learning Developer</h3>
+                <div class="text-muted text-small">Stratavision AI, Foster City<small> (November 2019 - July 2025)</small></div>
+              </div><img src="{% static 'images/services/web-design.svg' %}" width="48" height="48" alt="web design"/>
+            </div>
+          </div>
+          <div class="card-body px-3 py-2">
+            <p>Developed and maintained production AI pipelines for real-time computer vision — including traffic counting, pose estimation, employee interaction tracking, and checkout analytics — using YOLOv4, YOLOX, ResNet, and DeepStream.</p>
+            <p>Designed and Migrated platform to microservices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" data-aos="fade-right" data-aos-delay="200">
+          <div class="card-header px-3 py-2">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h3 class="h5 mb-1">Software Engineer</h3>
+                <div class="text-muted text-small"> Fiscal Hive, San Jose<small> (September 2018 - October 2019)</small></div>
+              </div><img src="{% static 'images/services/app-development.svg' %}" width="48" height="48" alt="app development"/>
+            </div>
+          </div>
+          <div class="card-body px-3 py-2">
+            <p>Built backend web applications using Python/Django on AWS. Developed a loan filtering algorithm, set up REST APIs, managed Docker/Celery/Jenkins deployments, and refactored large codebases for maintainability.</p>
+            <p>Worked in a team with sprint based development and agile methodologies with 20+ developers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" data-aos="fade-left" data-aos-delay="400">
+          <div class="card-header px-3 py-2">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h3 class="h5 mb-1">Miscellaneous Projects</h3>
+                <div class="text-muted text-small">Self</div>
+              </div><img src="{% static 'images/services/full-stack.svg' %}" width="48" height="48" alt="full stack"/>
+            </div>
+          </div>
+          <div class="card-body px-3 py-2">
+            <p>Built CV systems for baggage detection, parking alerts, traffic heat maps, and employee interaction tracking using YOLO and DeepStream.</p>
+            <p>Also developed a Deep Q-learning navigation agent, a speech recognition system using RNN/CNN, a robotic arm kinematic simulator, and a personal productivity web app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center my-4">
+      <a
+        class="btn btn-primary shadow-sm"
+        href="https://drive.google.com/file/d/1KB5GYMyX-oB_6gqqGpO31XolHXwA0Bv1/view?usp=drive_link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download Resume <i class="fas fa-download ms-2"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="section px-3 px-lg-4 pt-5" id="testimonials">
+  <div class="container-narrow">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">Testimonials</h2>
+    </div>
+    <div class="row"> 
+      <div class="col-md-6 mb-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">Sharath is a skilled Applied ML Engineer who tackles complex problems with clarity and creativity. He is a dependable team player who brings both technical depth and a collaborative spirit to every project.</span></div>
+        <div class="text-end me-md-3 mt-2">
+          <div class="fw-bolder">Abhijit Deshpande</div>
+          <div class="text-small">CTO</div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5" data-aos="fade-left" data-aos-delay="300">
+        <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">Sharath displays exemplary professionalism and is able to take on challenges. He learns quickly and is an asset to any team.</span></div>
+        <div class="text-end me-md-3 mt-2">
+          <div class="fw-bolder">Vanessa Angulo</div>
+          <div class="text-small">Sr. Systems Engineer</div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5" data-aos="fade-right" data-aos-delay="200">
+        <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">Sharath is a great co-worker and problem solver. He is quick to extend his helping hand and makes a good team player.</span></div>
+        <div class="text-end me-md-3 mt-2">
+          <div class="fw-bolder">Mayur Kulkarni</div>
+          <div class="text-small">Sr. Machine Learning Engineer</div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5" data-aos="fade-left" data-aos-delay="400">
+        <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">Sharath is an invaluable colleague. His resourcefulness, deep knowledge, and exceptional ability to break down complex problems ensure rapid resolutions and thorough root cause analysis. He is a standout professional.</span></div>
+        <div class="text-end me-md-3 mt-2">
+          <div class="fw-bolder">Rohith Sreedhar</div>
+          <div class="text-small">ML Systems Engineer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section px-2 px-lg-4 pb-4 pt-5 mb-5" id="contact">
+  <div class="container-narrow">
+    <div class="text-center mb-5">
+      <h2 class="marker marker-center">Contact Me</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="bg-light my-2 p-3 pt-2"><form action="https://formspree.io/sharath22128392@gmail.com"
+    method="POST">
+    <div class="form-group my-2">
+      <label for="name" class="form-label fw-bolder">Name</label>
+      <input class="form-control" type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group my-2">
+      <label for="email" class="form-label fw-bolder">Email</label>
+      <input class="form-control" type="email" id="email" name="_replyto" required>
+    </div>
+  <div class="form-group my-2">
+    <label for="message" class="form-label fw-bolder">Message</label>
+    <textarea class="form-control" style="resize: none;" id="message" name="message" rows="4" required></textarea>
+  </div>
+  <button class="btn btn-primary mt-2" type="submit">Send</button>
+</form>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+        <div class="mt-3 px-1">
+          <div class="h5">Let's talk!</div>
+          <p>If you like my work and want to hire me then drop me a message using the contact form. </p>
+          <p>Or get in touch using my email or my contact number.</p>
+          <p>See you!</p>
+        </div>
+        <div class="mt-53 px-1">
+          <div class="row"> 
+            <div class="col-sm-2">
+              <div class="pb-1">Email:</div>
+            </div>
+            <div class="col-sm-10">
+              <div class="pb-1 fw-bolder">sharath22128392@gmail.com</div>
+            </div>
+            <div class="col-sm-2">
+              <div class="pb-1">Phone:</div>
+            </div>
+            <div class="col-sm-10">
+              <div class="pb-1 fw-bolder">+916301931541</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="pt-4 pb-4 text-center bg-light">
+  <div class="container">
+    <div class="my-3">
+      <div class="h4">Sharath Tunuguntla</div>
+      <p>Principal Software Engineer & Machine Learning Developer</p>
+      <div class="social-nav">
+        <nav role="navigation">
+          <ul class="nav justify-content-center">
+            <li class="nav-item"><div class="copy-wrapper"><a class="nav-link" onclick="copyEmail('sharath22128392@gmail.com', 'footer-tooltip')" title="Email"><i class="fas fa-envelope"></i><span class="menu-title sr-only">Email</span></a><div id="footer-tooltip" class="tooltip-copy">Email copied!</div></div></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/SharathTunu" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span class="menu-title sr-only">GitHub</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/sharath-tunuguntla/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.kaggle.com/sharathtunuguntla" title="Kaggle" target="_blank" rel="noopener noreferrer"><i class="fab fa-kaggle"></i><span class="menu-title sr-only">Kaggle</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://leetcode.com/u/sharath33/" title="LeetCode" target="_blank" rel="noopener noreferrer"><img src="{% static 'images/leetcode.svg' %}" alt="LeetCode" class="leetcode-icon"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- <div class="text-small text-secondary">
+      <div class="mb-1">&copy; Super Folio. All rights reserved.</div>
+      <div>
+       Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div> 
+    </div>
+  </div> -->
+</footer></div>
+</div>
+{% include 'core/rag_chat_modal.html' %}
+{% include 'core/cv_video_modal.html' %}
+{% include 'core/web_design_video_modal.html' %}
+{% include 'core/service_popup.html' %}
+<button type="button" class="rag-chat-fab btn btn-primary rag-chat-trigger shadow" id="ragChatFab" aria-label="Open portfolio assistant chat" title="Chat about my portfolio">
+  <i class="fas fa-comments" aria-hidden="true"></i>
+</button>
+<div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
+<script src="{% static 'scripts/imagesloaded.pkgd.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/masonry.pkgd.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/BigPicture.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/purecounter.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/bootstrap.bundle.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/aos.min.js' %}?ver=1.2.0"></script>
+<script src="{% static 'scripts/main.js' %}?ver=1.2.1"></script>
+<script src="{% static 'scripts/copy_email.js' %}"></script>
+<script>
+(function () {
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp("(^|; )" + name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") + "=([^;]*)"));
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+  var serviceClickUrl = "{% url 'service_click' %}";
+  var modalEl = document.getElementById("servicePopup");
+  var serviceModal = modalEl
+    ? new bootstrap.Modal(modalEl, {backdrop: true, keyboard: true})
+    : null;
+
+  function openServicePopup(title, html, markdownFallback) {
+    var titleEl = document.getElementById("servicePopupTitle");
+    var mdEl = document.getElementById("servicePopupMarkdown");
+    if (titleEl) titleEl.textContent = title || "";
+    if (mdEl) {
+      if (html) mdEl.innerHTML = html;
+      else mdEl.textContent = markdownFallback || "";
+    }
+    if (serviceModal) serviceModal.show();
+  }
+
+  // Skills progress bars use `data-width` so template values don't break inline CSS linting.
+  document.querySelectorAll(".progress-bar[data-width]").forEach(function (el) {
+    var w = el.getAttribute("data-width");
+    if (w) el.style.width = w + "%";
+  });
+
+  var ragChatUrl = "{% url 'rag_chat' %}";
+  var ragModalEl = document.getElementById("ragChatModal");
+  var ragModal = ragModalEl ? new bootstrap.Modal(ragModalEl, { backdrop: true, keyboard: true }) : null;
+
+  var cvModalEl = document.getElementById("cvVideoModal");
+  var cvModal = cvModalEl ? new bootstrap.Modal(cvModalEl, { backdrop: true, keyboard: true }) : null;
+  var cvMainVideo = document.getElementById("cvDemoMainVideo");
+  var cvMainSource = document.getElementById("cvDemoMainSource");
+  var cvFirstSrc = cvMainSource ? cvMainSource.getAttribute("src") : null;
+
+  document.querySelectorAll("a.cv-video-trigger:not(.disabled)").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (cvModal) cvModal.show();
+    });
+  });
+
+  if (cvModalEl && cvMainVideo && cvMainSource && cvFirstSrc) {
+    cvModalEl.addEventListener("shown.bs.modal", function () {
+      cvMainSource.setAttribute("src", cvFirstSrc);
+      cvMainVideo.load();
+      document.querySelectorAll(".cv-video-thumb").forEach(function (t) {
+        t.classList.toggle("is-active", t.getAttribute("data-video-src") === cvFirstSrc);
+      });
+    });
+    cvModalEl.addEventListener("hidden.bs.modal", function () {
+      cvMainVideo.pause();
+    });
+    document.querySelectorAll(".cv-video-thumb").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var src = btn.getAttribute("data-video-src");
+        if (!src) return;
+        cvMainSource.setAttribute("src", src);
+        cvMainVideo.load();
+        cvMainVideo.play().catch(function () {});
+        document.querySelectorAll(".cv-video-thumb").forEach(function (t) {
+          t.classList.toggle("is-active", t === btn);
+        });
+      });
+    });
+  }
+
+  var wdModalEl = document.getElementById("webDesignVideoModal");
+  var wdModal = wdModalEl ? new bootstrap.Modal(wdModalEl, { backdrop: true, keyboard: true }) : null;
+  var wdMainVideo = document.getElementById("webDesignDemoMainVideo");
+  var wdMainSource = document.getElementById("webDesignDemoMainSource");
+  var wdFirstSrc = wdMainSource ? wdMainSource.getAttribute("src") : null;
+
+  document.querySelectorAll("a.web-design-video-trigger:not(.disabled)").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (wdModal) wdModal.show();
+    });
+  });
+
+  if (wdModalEl && wdMainVideo && wdMainSource && wdFirstSrc) {
+    wdModalEl.addEventListener("shown.bs.modal", function () {
+      wdMainSource.setAttribute("src", wdFirstSrc);
+      wdMainVideo.load();
+      document.querySelectorAll(".web-design-video-thumb").forEach(function (t) {
+        t.classList.toggle("is-active", t.getAttribute("data-video-src") === wdFirstSrc);
+      });
+    });
+    wdModalEl.addEventListener("hidden.bs.modal", function () {
+      wdMainVideo.pause();
+    });
+    document.querySelectorAll(".web-design-video-thumb").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var src = btn.getAttribute("data-video-src");
+        if (!src) return;
+        wdMainSource.setAttribute("src", src);
+        wdMainVideo.load();
+        wdMainVideo.play().catch(function () {});
+        document.querySelectorAll(".web-design-video-thumb").forEach(function (t) {
+          t.classList.toggle("is-active", t === btn);
+        });
+      });
+    });
+  }
+  var ragMessagesEl = document.getElementById("ragChatMessages");
+  var ragForm = document.getElementById("ragChatForm");
+  var ragInput = document.getElementById("ragChatInput");
+  var ragSendBtn = document.getElementById("ragChatSend");
+
+  function appendRagBubble(role, text) {
+    if (!ragMessagesEl) return;
+    var div = document.createElement("div");
+    div.className = "rag-chat-bubble " + role;
+    div.textContent = text;
+    ragMessagesEl.appendChild(div);
+    ragMessagesEl.scrollTop = ragMessagesEl.scrollHeight;
+  }
+
+  var ragThinkingEl = null;
+
+  function removeRagThinking() {
+    if (ragThinkingEl && ragThinkingEl.parentNode) {
+      ragThinkingEl.parentNode.removeChild(ragThinkingEl);
+    }
+    ragThinkingEl = null;
+    var stale = document.getElementById("ragChatThinking");
+    if (stale && stale.parentNode) {
+      stale.parentNode.removeChild(stale);
+    }
+  }
+
+  function showRagThinking() {
+    removeRagThinking();
+    if (!ragMessagesEl) return;
+    var wrap = document.createElement("div");
+    wrap.className = "rag-chat-bubble assistant thinking";
+    wrap.id = "ragChatThinking";
+    wrap.setAttribute("aria-live", "polite");
+    wrap.setAttribute("aria-busy", "true");
+    wrap.innerHTML =
+      '<span class="spinner-border spinner-border-sm text-primary" role="status" aria-hidden="true"></span>' +
+      '<span class="rag-thinking-label ms-1">Thinking…</span>' +
+      '<span class="visually-hidden">Waiting for a response</span>';
+    ragMessagesEl.appendChild(wrap);
+    ragThinkingEl = wrap;
+    ragMessagesEl.scrollTop = ragMessagesEl.scrollHeight;
+  }
+
+  function setRagLoading(loading) {
+    if (ragSendBtn) ragSendBtn.disabled = loading;
+    if (ragInput) ragInput.disabled = loading;
+  }
+
+  document.querySelectorAll(".rag-chat-trigger").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (ragModal) ragModal.show();
+      if (ragInput) setTimeout(function () { ragInput.focus(); }, 300);
+    });
+  });
+
+  if (ragForm && ragInput) {
+    ragForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var text = (ragInput.value || "").trim();
+      if (!text) return;
+      var input = document.querySelector("[name=csrfmiddlewaretoken]");
+      var csrftoken = input ? input.value : getCookie("csrftoken");
+      var headers = { "Content-Type": "application/json" };
+      if (csrftoken) headers["X-CSRFToken"] = csrftoken;
+      appendRagBubble("user", text);
+      ragInput.value = "";
+      setRagLoading(true);
+      showRagThinking();
+      fetch(ragChatUrl, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({ message: text }),
+        credentials: "same-origin"
+      })
+        .then(function (res) { return res.json().then(function (data) { return { res: res, data: data }; }); })
+        .then(function (o) {
+          removeRagThinking();
+          if (o.res.ok && o.data && o.data.ok && o.data.answer) {
+            appendRagBubble("assistant", o.data.answer);
+          } else {
+            var err = (o.data && o.data.error) ? o.data.error : "Something went wrong.";
+            appendRagBubble("error", err);
+          }
+        })
+        .catch(function () {
+          removeRagThinking();
+          appendRagBubble("error", "Could not reach the server.");
+        })
+        .finally(function () {
+          removeRagThinking();
+          setRagLoading(false);
+          if (ragInput) ragInput.focus();
+        });
+    });
+  }
+
+  document.querySelectorAll(".service-icon-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var section = btn.getAttribute("data-service");
+      if (!section) return;
+      var input = document.querySelector("[name=csrfmiddlewaretoken]");
+      var csrftoken = input ? input.value : getCookie("csrftoken");
+      var headers = { "Content-Type": "application/json" };
+      if (csrftoken) headers["X-CSRFToken"] = csrftoken;
+      fetch(serviceClickUrl, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({ section: section }),
+        credentials: "same-origin"
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data || !data.ok) return;
+          openServicePopup(data.title || data.section, data.html, data.markdown);
+        })
+        .catch(function () {});
+    });
+  });
+})();
+</script>
+</body>
+</html>
+

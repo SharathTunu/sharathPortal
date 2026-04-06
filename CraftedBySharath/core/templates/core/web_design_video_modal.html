@@ -1,0 +1,102 @@
+{% load static video_display %}
+<style>
+  a.web-design-video-trigger.disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+</style>
+{% if web_design_videos %}
+  <div
+    class="modal fade"
+    id="webDesignVideoModal"
+    tabindex="-1"
+    aria-labelledby="webDesignVideoModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content web-design-video-modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title" id="webDesignVideoModalTitle">Web Design Walkthroughs</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body pt-2">
+          <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden">
+            <video
+              id="webDesignDemoMainVideo"
+              class="w-100 h-100"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source
+                id="webDesignDemoMainSource"
+                src="{% static 'web_design/'|add:web_design_videos.0 %}"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="web-design-video-strip-wrap mt-3">
+            <p class="text-muted text-small mb-2 mb-0">Walkthroughs</p>
+            <div class="web-design-video-strip d-flex gap-2 pb-1" role="list">
+              {% for name in web_design_videos %}
+                <button
+                  type="button"
+                  class="web-design-video-thumb flex-shrink-0 btn btn-light border p-1 text-start{% if forloop.first %} is-active{% endif %}"
+                  role="listitem"
+                  data-video-src="{% static 'web_design/'|add:name %}"
+                  aria-label="Play {{ name|video_display_name }}"
+                >
+                  <div class="web-design-video-thumb-frame rounded overflow-hidden bg-dark">
+                    <video
+                      class="d-block w-100"
+                      muted
+                      playsinline
+                      preload="metadata"
+                      style="height: 72px; object-fit: cover;"
+                    >
+                      <source src="{% static 'web_design/'|add:name %}" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="d-block text-truncate small mt-1 px-1" style="max-width: 132px"
+                    >{{ name|video_display_name }}</span
+                  >
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .web-design-video-modal-content {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .web-design-video-strip-wrap .web-design-video-strip {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable;
+    }
+
+    .web-design-video-strip .web-design-video-thumb {
+      min-width: 0;
+      max-width: 140px;
+    }
+
+    .web-design-video-strip .web-design-video-thumb-frame video {
+      pointer-events: none;
+    }
+
+    .web-design-video-strip .web-design-video-thumb.is-active {
+      outline: 2px solid var(--bs-primary);
+      outline-offset: 2px;
+    }
+  </style>
+{% endif %}

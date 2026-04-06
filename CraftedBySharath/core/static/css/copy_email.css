@@ -1,0 +1,36 @@
+.nav-item {
+    list-style: none;
+  }
+  
+.nav-link {
+  cursor: pointer;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Tooltip styling */
+.tooltip-copy {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-copy.show {
+  opacity: 1;
+}
+
+.copy-wrapper {
+  position: relative;
+  display: inline-block;
+}
+  

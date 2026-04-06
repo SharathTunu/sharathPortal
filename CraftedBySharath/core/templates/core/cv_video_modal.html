@@ -1,0 +1,102 @@
+{% load static video_display %}
+<style>
+  a.cv-video-trigger.disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+</style>
+{% if cv_videos %}
+  <div
+    class="modal fade"
+    id="cvVideoModal"
+    tabindex="-1"
+    aria-labelledby="cvVideoModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content cv-video-modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title" id="cvVideoModalTitle">Computer Vision Demos</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body pt-2">
+          <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden">
+            <video
+              id="cvDemoMainVideo"
+              class="w-100 h-100"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source
+                id="cvDemoMainSource"
+                src="{% static 'videos/'|add:cv_videos.0 %}"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div class="cv-video-strip-wrap mt-3">
+            <p class="text-muted text-small mb-2 mb-0">Demos</p>
+            <div class="cv-video-strip d-flex gap-2 pb-1" role="list">
+              {% for name in cv_videos %}
+                <button
+                  type="button"
+                  class="cv-video-thumb flex-shrink-0 btn btn-light border p-1 text-start{% if forloop.first %} is-active{% endif %}"
+                  role="listitem"
+                  data-video-src="{% static 'videos/'|add:name %}"
+                  aria-label="Play {{ name|video_display_name }}"
+                >
+                  <div class="cv-video-thumb-frame rounded overflow-hidden bg-dark">
+                    <video
+                      class="d-block w-100"
+                      muted
+                      playsinline
+                      preload="metadata"
+                      style="height: 72px; object-fit: cover;"
+                    >
+                      <source src="{% static 'videos/'|add:name %}" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="d-block text-truncate small mt-1 px-1" style="max-width: 132px"
+                    >{{ name|video_display_name }}</span
+                  >
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .cv-video-modal-content {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .cv-video-strip-wrap .cv-video-strip {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable;
+    }
+
+    .cv-video-strip .cv-video-thumb {
+      min-width: 0;
+      max-width: 140px;
+    }
+
+    .cv-video-strip .cv-video-thumb-frame video {
+      pointer-events: none;
+    }
+
+    .cv-video-strip .cv-video-thumb.is-active {
+      outline: 2px solid var(--bs-primary);
+      outline-offset: 2px;
+    }
+  </style>
+{% endif %}
