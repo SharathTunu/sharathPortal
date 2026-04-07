@@ -152,6 +152,3 @@ RAG tile **excludes** the portfolio lightbox gallery (see comment in `main.js` â
 | Index rebuild | `python manage.py ingest_rag` |
 | UI polish | `core/static/scripts/main.js`, `main.css` |
 
----
-
-*This document is descriptive only; it does not change application behavior.*
