@@ -139,24 +139,7 @@ RAG tile **excludes** the portfolio lightbox gallery (see comment in `main.js` �
 
 ---
 
-## 10. Suggested 90-second video timeline (storyboard)
-
-Use this as a pacing guide (~15 seconds per “beat”; adjust to your voiceover).
-
-| Time | On screen | Narrative / code hook |
-|------|-----------|------------------------|
-| **0:00–0:15** | Hero + navbar | Single Django route serves the whole page; quick scroll shows anchor sections. |
-| **0:15–0:30** | `#about` → `#services` | Click **one** expertise icon; modal from **`/api/services/click/`** + Expertise markdown. |
-| **0:30–0:45** | `#skills` | Mention bars driven by **`home`** context + small inline JS. |
-| **0:45–1:00** | `#portfolio` | RAG tile or FAB → chat modal; one short question; answer via **RAG + Ollama**. |
-| **1:00–1:15** | CV tile (if videos exist) or Model Zoo link | Optional: modal with static videos, or external HF tab. |
-| **1:15–1:30** | `#contact` + Formspree | Closing CTA; form submits outside Django. |
-
-**Total:** ~90 seconds. If RAG or Ollama is unavailable, script the middle segment as “assistant when the stack is running” or show the error bubble briefly and move on.
-
----
-
-## 11. File checklist for producers
+## 10. File checklist for producers
 
 | Topic | Primary files |
 |-------|----------------|
